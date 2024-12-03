@@ -28,7 +28,7 @@ jobs:
       run: |
         docker run -d -p 5001:5000 flask-app
         sleep 10
-        curl -f http://localhost:5000
+        curl -f http://localhost:5001
 
     # Step 5: Deploy to server (local Docker deployment)
     - name: Deploy to local Docker
