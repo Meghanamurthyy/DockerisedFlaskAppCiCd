@@ -26,11 +26,15 @@ jobs:
     # Step 4: Run container tests (optional)
     - name: Test container
       run: |
-        docker run -d -p 5000:5000 flask-app
-        curl -f http://localhost:5000
+        docker run -d -p 6666:5000 flask-app
+        sleep 10
+        curl -f http://localhost:6666
 
     # Step 5: Deploy to server (local Docker deployment)
     - name: Deploy to Docker Hub (or local Docker registry)
       run: |
         docker tag flask-app meghanamurthyy/flask-app:latest  # Tag the image (replace 'myusername' with your Docker Hub username)
         docker push meghanamurthyy/flask-app:latest 
+
+    
+
