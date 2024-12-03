@@ -27,6 +27,7 @@ jobs:
     - name: Test container
       run: |
         docker run -d -p 5000:5000 flask-app
+        sleep 10
         curl -f http://localhost:5000
 
     # Step 5: Deploy to server (local Docker deployment)
